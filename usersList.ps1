@@ -20,7 +20,7 @@ function get-adusers() {
 function set-adusers() {
 
 	$listAdusers = get-adusers
-
+	$sdfg = "swert"
 
 	If($listAdusers.count -ne 0 ) {
 
