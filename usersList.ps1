@@ -42,6 +42,11 @@ function set-adusers() {
 	}
 } #-- function
 
+
+function move-aduser () {
+	
+}
+
 function main() {
 
 	set-adusers
