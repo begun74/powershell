@@ -22,7 +22,8 @@ function set-adusers() {
 
 	$listAdusers = get-adusers     #Array of ADUsers
 	
-	
+	move-adusers($listAdusers)
+
 	If($listAdusers.count -ne 0 ) {
 
 		ForEach ($user in $listAdusers) { 
@@ -43,8 +44,20 @@ function set-adusers() {
 } #-- function
 
 
-function move-aduser () {
-	
+function move-adusers () {
+	Param(
+		[Parameter(Mandatory=$false)] [Object[]]$listAdusers,
+		[Parameter(Mandatory=$false)] [String]$isEnable="False"
+	)
+
+	ForEach ($user in $listAdusers) { 
+		if($user.GetType().Name -eq "ADUser" -and $user.Enabled -eq $isEnable) { #Проверяем тип обьекта и чтоб был отключён
+		
+			Write-Output  $user.Name " - " $user.Enabled
+		
+		}
+	}
+
 }
 
 function main() {
