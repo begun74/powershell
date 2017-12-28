@@ -49,6 +49,7 @@ function set-adusers() {
 function move-adusers () {
 	Param(
 		[Parameter(Mandatory=$false)] [Object[]]$listAdusers,
+		
 		[Parameter(Mandatory=$false)] [boolean]$isEnable=0
 	)
 
