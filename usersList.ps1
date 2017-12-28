@@ -49,7 +49,7 @@ function set-adusers() {
 function move-adusers () {
 	Param(
 		[Parameter(Mandatory=$false)] [Object[]]$listAdusers,
-		[Parameter(Mandatory=$false)] [String]$isEnable="False"
+		[Parameter(Mandatory=$false)] [boolean]$isEnable=0
 	)
 
 	ForEach ($user in $listAdusers) { 
@@ -63,11 +63,11 @@ function move-adusers () {
 }
 
 function main() {
-	$listAdusers = get-adusers     #Array of ADUsers
+	$listAdusers = get-adusers("False")     #Array of ADUsers
 
 	set-adusers($listAdusers)
 
-	#move-adusers($listAdusers)
+	move-adusers($listAdusers)
 }
 
 main
