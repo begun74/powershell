@@ -1,6 +1,7 @@
 ﻿Import-Module ActiveDirectory
 
 
+
 function get-adusers() {
 	
 	Param(
@@ -9,7 +10,7 @@ function get-adusers() {
 
 	#Write-Output "isEnabled - " $isEnabled
 
-	###### $listAdusers = Get-ADUser -Filter {Name -like "qwe*"} -SearchBase "OU=�� ������������,DC=interfarmax,DC=local" -Properties * | select Name,SID,PostalCode | Export-Csv '.\ifx_local.csv'
+	###### $listAdusers = Get-ADUser -Filter {Name -like "qwe*"} -SearchBase "OU=ГК ИНТЕРФАРМАКС,DC=interfarmax,DC=local" -Properties * | select Name,SID,PostalCode | Export-Csv '.\ifx_local.csv'
 
 	$listAdusers = (Get-ADUser -Filter {Name -like "qwe*" -and Enabled -eq $isEnabled} -SearchBase "OU=ГК ИНТЕРФАРМАКС,DC=interfarmax,DC=local" -Properties *)
 
@@ -19,7 +20,8 @@ function get-adusers() {
 
 function set-adusers() {
 
-	$listAdusers = get-adusers
+	$listAdusers = get-adusers #Array of ADUsers
+	
 	
 	If($listAdusers.count -ne 0 ) {
 
