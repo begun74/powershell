@@ -20,9 +20,11 @@ function get-adusers() {
 
 function set-adusers() {
 
-	$listAdusers = get-adusers     #Array of ADUsers
+	Param(
+		[Parameter(Mandatory=$false)] [Object[]]$listAdusers
+	)
+
 	
-	move-adusers($listAdusers)
 
 	If($listAdusers.count -ne 0 ) {
 
@@ -61,8 +63,11 @@ function move-adusers () {
 }
 
 function main() {
+	$listAdusers = get-adusers     #Array of ADUsers
 
-	set-adusers
+	set-adusers($listAdusers)
+
+	#move-adusers($listAdusers)
 }
 
 main
