@@ -7,7 +7,7 @@ function get-adusers() {
 		[Parameter(Mandatory=$false)] [String]$isEnabled="True"
 	)
 
-	Write-Output "isEnabled - " $isEnabled
+	#Write-Output "isEnabled - " $isEnabled
 
 	###### $listAdusers = Get-ADUser -Filter {Name -like "qwe*"} -SearchBase "OU=�� ������������,DC=interfarmax,DC=local" -Properties * | select Name,SID,PostalCode | Export-Csv '.\ifx_local.csv'
 
