@@ -20,14 +20,13 @@ function get-adusers() {
 
 function set-adusers() {
 
-	$listAdusers = get-adusers #Array of ADUsers
+	$listAdusers = get-adusers     #Array of ADUsers
 	
 	
 	If($listAdusers.count -ne 0 ) {
 
 		ForEach ($user in $listAdusers) { 
 			if($user.GetType().Name -eq "ADUser") { #Проверяем тип обьекта
-
 			
 				Write-Output $user.Name
 			
