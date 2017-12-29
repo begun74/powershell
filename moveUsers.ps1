@@ -12,12 +12,12 @@ function move-adusers () {
 
 	)
 
-	Write-Host   "Target_Path - "  $Target_Path 
+	#Write-Host   "Target_Path - "  $Target_Path 
 
 	ForEach ($user in $listAdusers) { 
 		if($user.GetType().Name -eq "ADUser" -and $user.Enabled -eq $isEnable) { #Проверяем тип обьекта и чтоб был отключён
 		
-			Write-Host   "Target_Path - "  $Target_Path 
+			Write-Host   $user "  -moved to-  "  $Target_Path 
 			Move-ADObject -Identity $user -TargetPath $Target_Path
 		}
 	}
