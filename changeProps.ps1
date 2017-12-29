@@ -1,4 +1,4 @@
-ÔªøImport-Module ActiveDirectory
+Import-Module ActiveDirectory
 
 
 
@@ -10,9 +10,9 @@ function get-adusers() {
 
 	###Write-Output "isEnabled - " $isEnabled
 
-	###### $listAdusers = Get-ADUser -Filter {Name -like "qwe*"} -SearchBase "OU=–ì–ö –ò–ù–¢–ï–†–§–ê–†–ú–ê–ö–°,DC=interfarmax,DC=local" -Properties * | select Name,SID,PostalCode | Export-Csv '.\ifx_local.csv'
+	###### $listAdusers = Get-ADUser -Filter {Name -like "qwe*"} -SearchBase "OU=√  »Õ“≈–‘¿–Ã¿ —,DC=interfarmax,DC=local" -Properties * | select Name,SID,PostalCode | Export-Csv '.\ifx_local.csv'
 
-	$listAdusers = (Get-ADUser -Filter {SamAccountName -like "qwe*" -and Enabled -eq $isEnabled} -SearchBase "OU=–ì–ö –ò–ù–¢–ï–†–§–ê–†–ú–ê–ö–°,DC=interfarmax,DC=local" -Properties *)
+	$listAdusers = (Get-ADUser -Filter {SamAccountName -like "qwe*" -and Enabled -eq $isEnabled} -SearchBase "OU=√  »Õ“≈–‘¿–Ã¿ —,DC=interfarmax,DC=local" -Properties *)
 
 	return $listAdusers
 }
@@ -29,7 +29,7 @@ function set-adusers() {
 	If($listAdusers.count -ne 0 ) {
 
 		ForEach ($user in $listAdusers) { 
-			if($user.GetType().Name -eq "ADUser") { #–ü—Ä–æ–≤–µ—Ä—è–µ–º —Ç–∏–ø –æ–±—å–µ–∫—Ç–∞
+			if($user.GetType().Name -eq "ADUser") { #œÓ‚ÂˇÂÏ ÚËÔ Ó·¸ÂÍÚ‡
 			
 				Write-Output $user.Name
 			
